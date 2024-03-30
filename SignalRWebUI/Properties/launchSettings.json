@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "SignalRWebUI": {
+    "RealTimeRestaurant.WebUI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

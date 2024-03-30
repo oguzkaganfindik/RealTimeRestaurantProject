@@ -1,4 +1,4 @@
-namespace SignalRWebUI.Models
+namespace RealTimeRestaurant.WebUI.Models
 {
     public class ErrorViewModel
     {
