@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTimeRestaurant.Api", "SignalRApi\RealTimeRestaurant.Api.csproj", "{BD856CA0-1A62-4389-A90E-BA3BC55E1A8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTimeRestaurant.Api", "RealTimeRestaurant.Api\RealTimeRestaurant.Api.csproj", "{BD856CA0-1A62-4389-A90E-BA3BC55E1A8E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTimeRestaurant.WebUI", "SignalRWebUI\RealTimeRestaurant.WebUI.csproj", "{CEAEA480-C68E-49D3-BC60-15E741C93859}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTimeRestaurant.WebUI", "RealTimeRestaurant.WebUI\RealTimeRestaurant.WebUI.csproj", "{CEAEA480-C68E-49D3-BC60-15E741C93859}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeRestaurant.EntityLayer", "SignalR.EntityLayer\RealTimeRestaurant.EntityLayer.csproj", "{E9F7AB89-B365-40CD-B385-434373DC2782}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeRestaurant.EntityLayer", "RealTimeRestaurant.EntityLayer\RealTimeRestaurant.EntityLayer.csproj", "{E9F7AB89-B365-40CD-B385-434373DC2782}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeRestaurant.DataAccessLayer", "RealTimeRestaurant.DataAccessLayer\RealTimeRestaurant.DataAccessLayer.csproj", "{ACD5B228-9B71-4C2B-8FA3-357A741B260F}"
 EndProject

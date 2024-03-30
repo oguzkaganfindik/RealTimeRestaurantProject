@@ -26,7 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SignalR.EntityLayer\RealTimeRestaurant.EntityLayer.csproj" />
+    <ProjectReference Include="..\RealTimeRestaurant.EntityLayer\RealTimeRestaurant.EntityLayer.csproj" />
+    <ProjectReference Include="..\RealTimeRestaurant.EntityLayer\RealTimeRestaurant.EntityLayer.csproj" />
   </ItemGroup>
 
 </Project>
