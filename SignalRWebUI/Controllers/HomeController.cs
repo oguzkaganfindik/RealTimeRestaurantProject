@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SignalRWebUI.Models;
+using RealTimeRestaurant.WebUI.Models;
 using System.Diagnostics;
 
-namespace SignalRWebUI.Controllers
+namespace RealTimeRestaurant.WebUI.Controllers
 {
     public class HomeController : Controller
     {
