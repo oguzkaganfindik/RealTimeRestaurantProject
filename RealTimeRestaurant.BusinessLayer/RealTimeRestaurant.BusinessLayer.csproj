@@ -10,4 +10,8 @@
     <ProjectReference Include="..\RealTimeRestaurant.DataAccessLayer\RealTimeRestaurant.DataAccessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Concrete\" />
+  </ItemGroup>
+
 </Project>
