@@ -9,6 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTimeRestaurant.WebUI", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeRestaurant.EntityLayer", "SignalR.EntityLayer\RealTimeRestaurant.EntityLayer.csproj", "{E9F7AB89-B365-40CD-B385-434373DC2782}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeRestaurant.DataAccessLayer", "RealTimeRestaurant.DataAccessLayer\RealTimeRestaurant.DataAccessLayer.csproj", "{ACD5B228-9B71-4C2B-8FA3-357A741B260F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeRestaurant.DtoLayer", "RealTimeRestaurant.DtoLayer\RealTimeRestaurant.DtoLayer.csproj", "{0A6CC93D-AB86-4E22-BFFA-D4A1A3D96431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeRestaurant.BusinessLayer", "RealTimeRestaurant.BusinessLayer\RealTimeRestaurant.BusinessLayer.csproj", "{D85350B4-E5BD-4C1C-92C1-D725FC5C2624}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +33,18 @@ Global
 		{E9F7AB89-B365-40CD-B385-434373DC2782}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9F7AB89-B365-40CD-B385-434373DC2782}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9F7AB89-B365-40CD-B385-434373DC2782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACD5B228-9B71-4C2B-8FA3-357A741B260F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACD5B228-9B71-4C2B-8FA3-357A741B260F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACD5B228-9B71-4C2B-8FA3-357A741B260F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACD5B228-9B71-4C2B-8FA3-357A741B260F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A6CC93D-AB86-4E22-BFFA-D4A1A3D96431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A6CC93D-AB86-4E22-BFFA-D4A1A3D96431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A6CC93D-AB86-4E22-BFFA-D4A1A3D96431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A6CC93D-AB86-4E22-BFFA-D4A1A3D96431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D85350B4-E5BD-4C1C-92C1-D725FC5C2624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D85350B4-E5BD-4C1C-92C1-D725FC5C2624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D85350B4-E5BD-4C1C-92C1-D725FC5C2624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D85350B4-E5BD-4C1C-92C1-D725FC5C2624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
