@@ -12,8 +12,8 @@ using RealTimeRestaurant.DataAccessLayer.Concrete;
 namespace RealTimeRestaurant.DataAccessLayer.Migrations
 {
     [DbContext(typeof(RealTimeRestaurantContext))]
-    [Migration("20240330092851_initialize")]
-    partial class initialize
+    [Migration("20240331052127_initialCreate")]
+    partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,8 +32,9 @@ namespace RealTimeRestaurant.DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AboutId"), 1L, 1);
 
-                    b.Property<int>("Description")
-                        .HasColumnType("int");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()

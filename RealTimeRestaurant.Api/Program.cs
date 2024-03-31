@@ -1,6 +1,16 @@
+using RealTimeRestaurant.BusinessLayer.Abstract;
+using RealTimeRestaurant.BusinessLayer.Concrete;
+using RealTimeRestaurant.DataAccessLayer.Abstract;
+using RealTimeRestaurant.DataAccessLayer.Concrete;
+using RealTimeRestaurant.DataAccessLayer.EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<RealTimeRestaurantContext>();
+
+builder.Services.AddScoped<IAboutService, AboutManager>();
+builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
