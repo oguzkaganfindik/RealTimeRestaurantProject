@@ -1,4 +1,5 @@
-﻿using RealTimeRestaurant.DataAccessLayer.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using RealTimeRestaurant.DataAccessLayer.Abstract;
 using RealTimeRestaurant.DataAccessLayer.Concrete;
 using RealTimeRestaurant.DataAccessLayer.Repositories;
 using RealTimeRestaurant.EntityLayer.Entities;
@@ -9,6 +10,13 @@ namespace RealTimeRestaurant.DataAccessLayer.EntityFramework
     {
         public EfProductDal(RealTimeRestaurantContext context) : base(context)
         {
+        }
+
+        public List<Product> GetProductsWithCategories()
+        {
+            var context = new RealTimeRestaurantContext();
+            var values = context.Products.Include(x => x.Category).ToList();
+            return values;
         }
     }
 }

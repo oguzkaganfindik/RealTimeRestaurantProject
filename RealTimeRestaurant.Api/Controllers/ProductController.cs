@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RealTimeRestaurant.BusinessLayer.Abstract;
+using RealTimeRestaurant.DataAccessLayer.Concrete;
 using RealTimeRestaurant.DtoLayer.ProductDto;
 using RealTimeRestaurant.EntityLayer.Entities;
 
@@ -24,6 +26,27 @@ namespace RealTimeRestaurant.Api.Controllers
         {
             var value = _mapper.Map<List<ResultProductDto>>(_productService.TGetListAll());
             return Ok(value);
+        }
+
+        [HttpGet("ProductListWithCategory")]
+        public IActionResult ProductListWithCategory() 
+        {
+            var context = new RealTimeRestaurantContext();
+            var values = context.Products.Include(x => x.Category).Select(y => new ResultProductWithCategory
+            {
+                Description = y.Description,
+                ImageUrl = y.ImageUrl,
+                Price = y.Price,
+                ProductId = y.ProductId,
+                ProductName = y.ProductName,
+                ProductStatus = y.ProductStatus,
+                CategoryName = y.Category.CategoryName
+            });
+
+            return Ok(values.ToList());
+
+            //var value = _mapper.Map<List<ResultProductWithCategory>>(_productService.TGetProductsWithCategories());
+            //return Ok(value);
         }
 
         [HttpPost]
