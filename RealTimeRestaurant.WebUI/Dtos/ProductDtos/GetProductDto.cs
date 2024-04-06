@@ -1,4 +1,4 @@
-﻿namespace RealTimeRestaurant.DtoLayer.ProductDto
+﻿namespace RealTimeRestaurant.WebUI.Dtos.ProductDtos
 {
     public class GetProductDto
     {
