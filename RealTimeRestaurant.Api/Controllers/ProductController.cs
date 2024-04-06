@@ -58,13 +58,14 @@ namespace RealTimeRestaurant.Api.Controllers
                 Description = createProductDto.Description,
                 ImageUrl = createProductDto.ImageUrl,
                 ProductStatus = createProductDto.ProductStatus,
-                Price = createProductDto.Price
+                Price = createProductDto.Price,
+                CategoryId = createProductDto.CategoryId
             });
 
             return Ok("Ürün Bilgisi Eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteProduct(int id)
         {
             var value = _productService.TGetById(id);
@@ -72,7 +73,7 @@ namespace RealTimeRestaurant.Api.Controllers
             return Ok("Ürün Bilgisi Silindi");
         }
 
-        [HttpGet("GetProduct")]
+        [HttpGet("{id}")]
         public IActionResult GetProduct(int id)
         {
             var value = _productService.TGetById(id);
@@ -89,7 +90,8 @@ namespace RealTimeRestaurant.Api.Controllers
                 Description = updateProductDto.Description,
                 ProductStatus = updateProductDto.ProductStatus,
                 ImageUrl = updateProductDto.ImageUrl,
-                Price = updateProductDto.Price
+                Price = updateProductDto.Price,
+                CategoryId = updateProductDto.CategoryId
             });
 
             return Ok("Ürün Bilgisi Güncellendi");

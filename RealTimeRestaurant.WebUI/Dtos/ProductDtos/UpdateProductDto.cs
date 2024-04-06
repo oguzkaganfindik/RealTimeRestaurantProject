@@ -1,6 +1,6 @@
-﻿namespace RealTimeRestaurant.DtoLayer.ProductDto
+﻿namespace RealTimeRestaurant.WebUI.Dtos.ProductDtos
 {
-    public class GetProductDto
+    public class UpdateProductDto
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
