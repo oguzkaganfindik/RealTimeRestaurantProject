@@ -41,7 +41,7 @@ namespace RealTimeRestaurant.Api.Controllers
             return Ok("Öne Çıkan Alan Bilgisi Eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteFeature(int id)
         {
             var value = _featureService.TGetById(id);
@@ -49,7 +49,7 @@ namespace RealTimeRestaurant.Api.Controllers
             return Ok("Öne Çıkan Alan Bilgisi Silindi");
         }
 
-        [HttpGet("GetFeature")]
+        [HttpGet("{id}")]
         public IActionResult GetFeature(int id)
         {
             var value = _featureService.TGetById(id);
