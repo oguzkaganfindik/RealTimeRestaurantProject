@@ -41,7 +41,7 @@ namespace RealTimeRestaurant.Api.Controllers
             return Ok("Kategori Eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteBooking(int id)
         {
             var value = _bookingService.TGetById(id);
@@ -49,7 +49,7 @@ namespace RealTimeRestaurant.Api.Controllers
             return Ok("Kategori Silindi");
         }
 
-        [HttpGet("GetBooking")]
+        [HttpGet("{id}")]
         public IActionResult GetBooking(int id)
         {
             var value = _bookingService.TGetById(id);
