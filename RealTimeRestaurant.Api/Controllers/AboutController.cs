@@ -36,18 +36,18 @@ namespace RealTimeRestaurant.Api.Controllers
                 ImageUrl = createAboutDto.ImageUrl
             });
 
-            return Ok("Kategori Eklendi");
+            return Ok("Hakkımda Kısmı Başarılı Bir Şekilde Eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteAbout(int id)
         {
             var value = _aboutService.TGetById(id);
             _aboutService.TDelete(value);
-            return Ok("Kategori Silindi");
+            return Ok("Hakkımda Alanı Silindi");
         }
 
-        [HttpGet("GetAbout")]
+        [HttpGet("{id}")]
         public IActionResult GetAbout(int id)
         {
             var value = _aboutService.TGetById(id);
@@ -65,7 +65,7 @@ namespace RealTimeRestaurant.Api.Controllers
                 ImageUrl = updateAboutDto.ImageUrl
             });
 
-            return Ok("Kategori Güncellendi");
+            return Ok("Hakkımda Alanı Güncellendi");
         }
     }
 }
