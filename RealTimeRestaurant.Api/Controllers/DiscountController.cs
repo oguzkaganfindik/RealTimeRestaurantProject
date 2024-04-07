@@ -40,7 +40,7 @@ namespace RealTimeRestaurant.Api.Controllers
             return Ok("İndirim Bilgisi Eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteDiscount(int id)
         {
             var value = _discountService.TGetById(id);
@@ -48,7 +48,7 @@ namespace RealTimeRestaurant.Api.Controllers
             return Ok("İndirim Bilgisi Silindi");
         }
 
-        [HttpGet("GetDiscount")]
+        [HttpGet("{id}")]
         public IActionResult GetDiscount(int id)
         {
             var value = _discountService.TGetById(id);
