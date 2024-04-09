@@ -8,6 +8,13 @@ namespace RealTimeRestaurant.DataAccessLayer.EntityFramework
 {
     public class EfProductDal : GenericRepository<Product>, IProductDal
     {
+        //private readonly RealTimeRestaurantContext _context;
+        //public EfProductDal(RealTimeRestaurantContext context) : base(context)
+        //{
+        //    _context = context;
+        //}
+        // TODO: Daha sonra D.I. yapacağım.
+
         public EfProductDal(RealTimeRestaurantContext context) : base(context)
         {
         }
@@ -35,6 +42,18 @@ namespace RealTimeRestaurant.DataAccessLayer.EntityFramework
         {
             using var context = new RealTimeRestaurantContext();
             return context.Products.Where(x => x.CategoryId == (context.Categories.Where(y => y.CategoryName == "Hamburger").Select(z => z.CategoryId).FirstOrDefault())).Count();
+        }
+
+        public string ProductNameByMaxPrice()
+        {
+            using var context = new RealTimeRestaurantContext();
+            return context.Products.Where(x => x.Price == (context.Products.Max(y => y.Price))).Select(z => z.ProductName).FirstOrDefault();
+        }
+
+        public string ProductNameByMinPrice()
+        {
+            using var context = new RealTimeRestaurantContext();
+            return context.Products.Where(x => x.Price == (context.Products.Min(y => y.Price))).Select(z => z.ProductName).FirstOrDefault();
         }
 
         public decimal ProductPriceAvg()
