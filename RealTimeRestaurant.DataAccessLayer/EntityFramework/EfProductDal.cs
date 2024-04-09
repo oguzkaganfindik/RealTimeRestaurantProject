@@ -24,5 +24,17 @@ namespace RealTimeRestaurant.DataAccessLayer.EntityFramework
             using var context = new RealTimeRestaurantContext();
             return context.Products.Count();
         }
+
+        public int ProductCountByCategoryNameDrink()
+        {
+            using var context = new RealTimeRestaurantContext();
+            return context.Products.Where(x => x.CategoryId == (context.Categories.Where(y => y.CategoryName == "içecek").Select(z => z.CategoryId).FirstOrDefault())).Count();
+        }
+
+        public int ProductCountByCategoryNameHamburger()
+        {
+            using var context = new RealTimeRestaurantContext();
+            return context.Products.Where(x => x.CategoryId == (context.Categories.Where(y => y.CategoryName == "Hamburger").Select(z => z.CategoryId).FirstOrDefault())).Count();
+        }
     }
 }

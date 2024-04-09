@@ -6,5 +6,7 @@ namespace RealTimeRestaurant.BusinessLayer.Abstract
     {
         List<Product> TGetProductsWithCategories();
         int TProductCount();
+        int TProductCountByCategoryNameHamburger();
+        int TProductCountByCategoryNameDrink();
     }
 }
