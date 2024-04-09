@@ -40,6 +40,12 @@ namespace RealTimeRestaurant.Api.Controllers
             return Ok(_productService.TProductCountByCategoryNameDrink());
         }
 
+        [HttpGet("ProductPriceAvg")]
+        public IActionResult ProductPriceAvg()
+        {
+            return Ok(_productService.TProductPriceAvg());
+        }
+
         [HttpGet("ProductCountByHamburger")]
         public IActionResult ProductCountByHamburger()
         {
