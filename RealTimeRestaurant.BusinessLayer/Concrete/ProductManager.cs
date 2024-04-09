@@ -13,6 +13,16 @@ namespace RealTimeRestaurant.BusinessLayer.Concrete
             _productDal = productDal;
         }
 
+        public string TProductNameByMaxPrice()
+        {
+            return _productDal.ProductNameByMaxPrice();
+        }
+
+        public string TProductNameByMinPrice()
+        {
+            return _productDal.ProductNameByMinPrice();
+        }
+
         public void TAdd(Product entity)
         {
             _productDal.Add(entity);
