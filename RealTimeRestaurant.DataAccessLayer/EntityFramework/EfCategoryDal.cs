@@ -10,5 +10,23 @@ namespace RealTimeRestaurant.DataAccessLayer.EntityFramework
         public EfCategoryDal(RealTimeRestaurantContext context) : base(context)
         {
         }
+
+        public int ActiveCategoryCount()
+        {
+            using var context = new RealTimeRestaurantContext();
+            return context.Categories.Where(x => x.Status == true).Count();
+        }
+
+        public int CategoryCount()
+        {
+            using var context = new RealTimeRestaurantContext();
+            return context.Categories.Count();
+        }
+
+        public int PassiveCategoryCount()
+        {
+            using var context = new RealTimeRestaurantContext();
+            return context.Categories.Where(x => x.Status == false).Count();
+        }
     }
 }
