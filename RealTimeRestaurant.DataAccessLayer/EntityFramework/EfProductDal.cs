@@ -36,5 +36,13 @@ namespace RealTimeRestaurant.DataAccessLayer.EntityFramework
             using var context = new RealTimeRestaurantContext();
             return context.Products.Where(x => x.CategoryId == (context.Categories.Where(y => y.CategoryName == "Hamburger").Select(z => z.CategoryId).FirstOrDefault())).Count();
         }
+
+        public decimal ProductPriceAvg()
+        {
+            using var context = new RealTimeRestaurantContext();
+            {
+                return context.Products.Average(x => x.Price);
+            }
+        }
     }
 }
