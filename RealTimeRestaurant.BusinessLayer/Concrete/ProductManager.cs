@@ -72,5 +72,10 @@ namespace RealTimeRestaurant.BusinessLayer.Concrete
         {
             _productDal.Update(entity);
         }
+
+        public decimal TProductAvgPriceByHamburger()
+        {
+            return _productDal.ProductAvgPriceByHamburger();
+        }
     }
 }
