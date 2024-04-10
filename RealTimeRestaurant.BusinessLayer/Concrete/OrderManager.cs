@@ -13,6 +13,11 @@ namespace RealTimeRestaurant.BusinessLayer.Concrete
             _orderDal = orderDal;
         }
 
+        public int TActiveOrderCount()
+        {
+            return _orderDal.ActiveOrderCount();
+        }
+
         public void TAdd(Order entity)
         {
             throw new NotImplementedException();
@@ -31,6 +36,11 @@ namespace RealTimeRestaurant.BusinessLayer.Concrete
         public List<Order> TGetListAll()
         {
             throw new NotImplementedException();
+        }
+
+        public int TTotalOrderCount()
+        {
+            return _orderDal.TotalOrderCount();
         }
 
         public void TUpdate(Order entity)
