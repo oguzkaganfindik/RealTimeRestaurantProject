@@ -38,6 +38,11 @@ namespace RealTimeRestaurant.BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
+        public decimal TLastOrderPrice()
+        {
+            return _orderDal.LastOrderPrice();
+        }
+
         public int TTotalOrderCount()
         {
             return _orderDal.TotalOrderCount();
