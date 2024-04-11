@@ -27,5 +27,13 @@ namespace RealTimeRestaurant.Api.Hubs
             var value2 = _productService.TProductCount();
             await Clients.All.SendAsync("ReceiveProductCount", value2);
         }
+
+        public async Task ActivePassiveCategoryCount()
+        {
+            var value3 = _categoryService.TActiveCategoryCount();
+            var value4 = _categoryService.TPassiveCategoryCount();
+            await Clients.All.SendAsync("ReceiverActiveCategoryCount", value3);
+            await Clients.All.SendAsync("ReceiverPassiveCategoryCount", value4);
+        }
     }
 }
