@@ -7,5 +7,6 @@ namespace RealTimeRestaurant.DataAccessLayer.Abstract
         int TotalOrderCount();
         int ActiveOrderCount();
         decimal LastOrderPrice();
+        decimal TodayTotalPrice();
     }
 }
