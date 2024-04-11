@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RealTimeRestaurant.DataAccessLayer.Concrete;
 
@@ -11,9 +12,10 @@ using RealTimeRestaurant.DataAccessLayer.Concrete;
 namespace RealTimeRestaurant.DataAccessLayer.Migrations
 {
     [DbContext(typeof(RealTimeRestaurantContext))]
-    partial class RealTimeRestaurantContextModelSnapshot : ModelSnapshot
+    [Migration("20240411073637_mig_add_dateonly")]
+    partial class mig_add_dateonly
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -216,6 +218,9 @@ namespace RealTimeRestaurant.DataAccessLayer.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .IsRequired()
