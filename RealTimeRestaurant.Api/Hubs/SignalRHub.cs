@@ -36,7 +36,7 @@ namespace RealTimeRestaurant.Api.Hubs
             await Clients.All.SendAsync("ReceiveProductCountByCategoryNameDrink", value6);
 
             var value7 = _productService.TProductPriceAvg();
-            await Clients.All.SendAsync("ReceiveProductPriceAvg", value7);
+            await Clients.All.SendAsync("ReceiveProductPriceAvg", value7.ToString("0.00") + " TL");
         }
     }
 }
