@@ -1,6 +1,6 @@
-﻿namespace RealTimeRestaurant.WebUI.Dtos.BasketDtos
+﻿namespace RealTimeRestaurant.Api.Models
 {
-    public class ResultBasketDto
+    public class ResultBasketListWithProducts
     {
         public int BasketId { get; set; }
         public decimal Price { get; set; }
