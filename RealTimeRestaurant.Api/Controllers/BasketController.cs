@@ -36,7 +36,8 @@ namespace RealTimeRestaurant.Api.Controllers
                 Price = z.Price,
                 ProductId = z.ProductId,
                 TotalPrice = z.TotalPrice,
-                ProductName = z.Product.ProductName
+                ProductName = z.Product.ProductName,
+
             }).ToList();
             
             return Ok(values);
