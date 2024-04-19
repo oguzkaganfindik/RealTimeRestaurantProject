@@ -15,7 +15,7 @@ namespace RealTimeRestaurant.BusinessLayer.Concrete
 
         public void TAdd(Basket entity)
         {
-            throw new NotImplementedException();
+            _basketDal.Add(entity);
         }
 
         public void TDelete(Basket entity)
