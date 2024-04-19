@@ -60,7 +60,7 @@ namespace RealTimeRestaurant.Api.Controllers
             return Ok();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteBasket(int id) 
         {
             var value = _basketService.TGetById(id);
