@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using RealTimeRestaurant.Api.Models;
 using RealTimeRestaurant.BusinessLayer.Abstract;
 using RealTimeRestaurant.DataAccessLayer.Concrete;
+using RealTimeRestaurant.DtoLayer.BasketDto;
+using RealTimeRestaurant.EntityLayer.Entities;
 
 namespace RealTimeRestaurant.Api.Controllers
 {
@@ -41,6 +43,21 @@ namespace RealTimeRestaurant.Api.Controllers
             }).ToList();
             
             return Ok(values);
+        }
+
+        [HttpPost]
+        public IActionResult CreateBasket(CreateBasketDto createBasketDto)
+        {
+            using var context = new RealTimeRestaurantContext();
+            _basketService.TAdd(new Basket()
+            {
+                ProductId = createBasketDto.ProductId,
+                Count = 1,
+                MenuTableId = 4,
+                Price = context.Products.Where(x => x.ProductId == createBasketDto.ProductId).Select(y => y.Price).FirstOrDefault(),
+                TotalPrice = 0,
+            });
+            return Ok();
         }
     }
 }
