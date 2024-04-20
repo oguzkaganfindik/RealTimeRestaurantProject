@@ -15,9 +15,15 @@ namespace RealTimeRestaurant.Api.Controllers
         }
 
         [HttpGet]
-        public ActionResult NotificationList() 
+        public ActionResult NotificationList()
         {
             return Ok(_notificationService.TGetListAll());
+        }
+
+        [HttpGet("NotificationCountByStatusFalse")]
+        public ActionResult NotificationCountByStatusFalse()
+        {
+            return Ok(_notificationService.TNotificationCountByStatusFalse());
         }
     }
 }
