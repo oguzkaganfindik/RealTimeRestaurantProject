@@ -10,5 +10,11 @@ namespace RealTimeRestaurant.DataAccessLayer.EntityFramework
         public EfNotificationDal(RealTimeRestaurantContext context) : base(context)
         {            
         }
+
+        public int NotificationCountByStatusFalse()
+        {
+            using var context = new RealTimeRestaurantContext();
+            return context.Notifications.Where(x => x.Status == false).Count();
+        }
     }
 }
