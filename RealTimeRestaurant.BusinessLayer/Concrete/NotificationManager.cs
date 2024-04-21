@@ -22,6 +22,11 @@ namespace RealTimeRestaurant.BusinessLayer.Concrete
             _notificationDal.Delete(entity);
         }
 
+        public List<Notification> TGetAllNotificationsByFalse()
+        {
+            return _notificationDal.GetAllNotificationsByFalse();
+        }
+
         public Notification TGetById(int id)
         {
             return _notificationDal.GetById(id);
