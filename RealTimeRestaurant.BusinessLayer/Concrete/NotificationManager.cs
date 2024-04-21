@@ -37,14 +37,14 @@ namespace RealTimeRestaurant.BusinessLayer.Concrete
             return _notificationDal.GetListAll();
         }
 
-        public void TNotificationChangeToFalse(int id)
+        public void TNotificationStatusChangeToFalse(int id)
         {
-            _notificationDal.NotificationChangeToFalse(id);
+            _notificationDal.NotificationStatusChangeToFalse(id);
         }
 
-        public void TNotificationChangeToTrue(int id)
+        public void TNotificationStatusChangeToTrue(int id)
         {
-            _notificationDal.NotificationChangeToTrue(id);
+            _notificationDal.NotificationStatusChangeToTrue(id);
         }
 
         public int TNotificationCountByStatusFalse()
