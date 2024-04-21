@@ -22,13 +22,13 @@ namespace RealTimeRestaurant.Api.Controllers
             return Ok(_notificationService.TGetListAll());
         }
 
-        [HttpGet("NotificationCountByStatusFalse")]
+        [HttpGet("NotificationCountByStatusFalse/{id}")]
         public ActionResult NotificationCountByStatusFalse()
         {
             return Ok(_notificationService.TNotificationCountByStatusFalse());
         }
 
-        [HttpGet("GetAllNotificationsByFalse")]
+        [HttpGet("GetAllNotificationsByFalse/{id}")]
         public ActionResult GetAllNotificationsByFalse()
         {
             return Ok(_notificationService.TGetAllNotificationsByFalse());
@@ -82,6 +82,20 @@ namespace RealTimeRestaurant.Api.Controllers
             _notificationService.TUpdate(notification);
 
             return Ok("Güncelleme İşlemi Başarıyla Yapıldı");
+        }
+
+        [HttpGet("NotificationChangeToFalse")]
+        public IActionResult NotificationChangeToFalse(int id)
+        {
+            _notificationService.TNotificationChangeToFalse(id);
+            return Ok("Güncelleme Yapıldı");
+        }
+
+        [HttpGet("NotificationChangeToTrue")]
+        public IActionResult NotificationChangeToTrue(int id)
+        {
+            _notificationService.TNotificationChangeToTrue(id);
+            return Ok("Güncelleme Yapıldı");
         }
     }
 }
