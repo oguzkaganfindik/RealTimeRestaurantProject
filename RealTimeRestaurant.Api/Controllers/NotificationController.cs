@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RealTimeRestaurant.BusinessLayer.Abstract;
+using RealTimeRestaurant.DtoLayer.NotificationDto;
+using RealTimeRestaurant.EntityLayer.Entities;
 
 namespace RealTimeRestaurant.Api.Controllers
 {
@@ -27,9 +29,59 @@ namespace RealTimeRestaurant.Api.Controllers
         }
 
         [HttpGet("GetAllNotificationsByFalse")]
-        public ActionResult GetAllNotificationsByFalse() 
+        public ActionResult GetAllNotificationsByFalse()
         {
             return Ok(_notificationService.TGetAllNotificationsByFalse());
+        }
+
+        [HttpPost]
+        public ActionResult CreateNotification(CreateNotificationDto createNotificationDto)
+        {
+            Notification notification = new Notification()
+            {
+                Description = createNotificationDto.Description,
+                Icon = createNotificationDto.Icon,
+                Status = false,
+                Type = createNotificationDto.Type,
+                Date = Convert.ToDateTime(DateTime.Now.ToShortDateString())
+            };
+
+            _notificationService.TAdd(notification);
+
+            return Ok("Ekleme İşlemi Başarıyla Yapıldı");
+        }
+
+        [HttpDelete]
+        public ActionResult DeleteNotification(int id) 
+        {
+            var value = _notificationService.TGetById(id);
+            _notificationService.TDelete(value);
+            return Ok("Bildirim Silindi");
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetNotification(int id)
+        {
+            var value = _notificationService.TGetById(id);
+            return Ok(value);
+        }
+
+        [HttpPut]
+        public ActionResult UpdateNotification(UpdateNotificationDto updateNotificationDto)
+        {
+            Notification notification = new Notification()
+            {
+                NotificationId = updateNotificationDto.NotificationId,
+                Description = updateNotificationDto.Description,
+                Icon = updateNotificationDto.Icon,
+                Status = updateNotificationDto.Status,
+                Type = updateNotificationDto.Type,
+                Date = updateNotificationDto.Date
+            };
+
+            _notificationService.TUpdate(notification);
+
+            return Ok("Güncelleme İşlemi Başarıyla Yapıldı");
         }
     }
 }
