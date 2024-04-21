@@ -51,7 +51,7 @@ namespace RealTimeRestaurant.Api.Controllers
             return Ok("Ekleme İşlemi Başarıyla Yapıldı");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public ActionResult DeleteNotification(int id) 
         {
             var value = _notificationService.TGetById(id);
