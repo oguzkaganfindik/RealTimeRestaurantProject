@@ -7,5 +7,7 @@ namespace RealTimeRestaurant.BusinessLayer.Abstract
         int TNotificationCountByStatusFalse();
 
         List<Notification> TGetAllNotificationsByFalse();
+        void TNotificationChangeToTrue(int id);
+        void TNotificationChangeToFalse(int id);
     }
 }
