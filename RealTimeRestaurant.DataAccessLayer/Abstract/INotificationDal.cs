@@ -6,7 +6,7 @@ namespace RealTimeRestaurant.DataAccessLayer.Abstract
     {
         int NotificationCountByStatusFalse();
         List<Notification> GetAllNotificationsByFalse();
-        void NotificationChangeToTrue(int id);
-        void NotificationChangeToFalse(int id);
+        void NotificationStatusChangeToTrue(int id);
+        void NotificationStatusChangeToFalse(int id);
     }
 }

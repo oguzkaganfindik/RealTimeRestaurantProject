@@ -17,7 +17,7 @@ namespace RealTimeRestaurant.DataAccessLayer.EntityFramework
             return context.Notifications.Where(x => x.Status == false).ToList();
         }
 
-        public void NotificationChangeToFalse(int id)
+        public void NotificationStatusChangeToFalse(int id)
         {
             using var context = new RealTimeRestaurantContext();
             var value = context.Notifications.Find(id);
@@ -25,7 +25,7 @@ namespace RealTimeRestaurant.DataAccessLayer.EntityFramework
             context.SaveChanges();
         }
 
-        public void NotificationChangeToTrue(int id)
+        public void NotificationStatusChangeToTrue(int id)
         {
             using var context = new RealTimeRestaurantContext();
             var value = context.Notifications.Find(id);
