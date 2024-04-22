@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RealTimeRestaurant.BusinessLayer.Abstract;
+using RealTimeRestaurant.DtoLayer.MenuTableDto;
+using RealTimeRestaurant.EntityLayer.Entities;
 
 namespace RealTimeRestaurant.Api.Controllers
 {
@@ -18,5 +20,54 @@ namespace RealTimeRestaurant.Api.Controllers
         {
             return Ok(_menuTableService.TMenuTableCount());
         }
+
+        [HttpGet]
+        public IActionResult MenuTableList()
+        {
+            var values = _menuTableService.TGetListAll();
+            return Ok(values);
+        }
+
+        [HttpPost]
+        public IActionResult CreateMenuTable(CreateMenuTableDto createMenuTableDto)
+        {
+            MenuTable menuTable = new MenuTable()
+            {
+                Name = createMenuTableDto.Name,
+                Status = false
+            };
+
+            _menuTableService.TAdd(menuTable);
+            return Ok("Masa Başarılı Bir Şekilde Eklendi");
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteMenuTable(int id)
+        {
+            var value = _menuTableService.TGetById(id);
+            _menuTableService.TDelete(value);
+            return Ok("Masa Silindi");
+        }
+
+        [HttpPut]
+        public IActionResult UpdateMenuTable(UpdateMenuTableDto updateMenuTableDto)
+        {
+            MenuTable menuTable = new MenuTable()
+            {
+                Name = updateMenuTableDto.Name,
+                Status = false,
+                MenuTableId = updateMenuTableDto.MenuTableId
+            };
+
+            _menuTableService.TUpdate(menuTable);
+            return Ok("Masa Bilgisi Güncellendi");
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetMenuTable(int id)
+        {
+            var value = _menuTableService.TGetById(id);
+            return Ok(value);
+        }       
     }
 }
