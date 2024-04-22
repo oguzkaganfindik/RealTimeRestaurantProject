@@ -37,6 +37,7 @@ namespace RealTimeRestaurant.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateMenuTable(CreateMenuTableDto createMenuTableDto)
         {
+            createMenuTableDto.Status = false;
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createMenuTableDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
