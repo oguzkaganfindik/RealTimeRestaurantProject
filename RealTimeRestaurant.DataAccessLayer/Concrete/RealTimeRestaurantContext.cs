@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using RealTimeRestaurant.EntityLayer.Entities;
 
 namespace RealTimeRestaurant.DataAccessLayer.Concrete
 {
-    public class RealTimeRestaurantContext : DbContext
+    public class RealTimeRestaurantContext : IdentityDbContext<AppUser, AppRole, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
