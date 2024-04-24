@@ -27,14 +27,18 @@ namespace RealTimeRestaurant.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateContact(CreateContactDto createCategoryDto)
+        public IActionResult CreateContact(CreateContactDto createContactDto)
         {
             _contactService.TAdd(new Contact()
             {
-                FooterDescription = createCategoryDto.FooterDescription,
-                Location = createCategoryDto.Location,
-                Mail = createCategoryDto.Mail,
-                Phone = createCategoryDto.Phone
+                FooterDescription = createContactDto.FooterDescription,
+                Location = createContactDto.Location,
+                Mail = createContactDto.Mail,
+                Phone = createContactDto.Phone,
+                FooterTitle = createContactDto.FooterTitle,
+                OpenDays = createContactDto.OpenDays,
+                OpenDaysDescription = createContactDto.OpenDaysDescription,
+                OpenHours = createContactDto.OpenHours
             });
 
             return Ok("İletişim Bilgisi Eklendi");
@@ -55,19 +59,22 @@ namespace RealTimeRestaurant.Api.Controllers
             return Ok(value);
         }
 
-        [HttpPut]
-        public IActionResult UpdateContact(UpdateContactDto updateContactDto)
-        {
-            _contactService.TUpdate(new Contact()
-            {
-                ContactId = updateContactDto.ContactId,
-                FooterDescription = updateContactDto.FooterDescription,
-                Location = updateContactDto.Location,
-                Mail = updateContactDto.Mail,
-                Phone = updateContactDto.Phone
-            });
-
-            return Ok("İletişim Bilgisi Güncellendi");
-        }
-    }
+		[HttpPut]
+		public IActionResult UpdateContact(UpdateContactDto updateContactDto)
+		{
+			_contactService.TUpdate(new Contact()
+			{
+				ContactId = updateContactDto.ContactId,
+				FooterDescription = updateContactDto.FooterDescription,
+				Location = updateContactDto.Location,
+				Mail = updateContactDto.Mail,
+				Phone = updateContactDto.Phone,
+				FooterTitle = updateContactDto.FooterTitle,
+				OpenDays = updateContactDto.OpenDays,
+				OpenDaysDescription = updateContactDto.OpenDaysDescription,
+				OpenHours = updateContactDto.OpenHours
+			});
+			return Ok("İletişim Bilgisi Güncellendi");
+		}
+	}
 }

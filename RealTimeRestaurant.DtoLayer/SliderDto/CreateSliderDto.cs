@@ -1,8 +1,7 @@
 ﻿namespace RealTimeRestaurant.DtoLayer.FeatureDto
 {
-    public class ResultFeatureDto
+    public class CreateSliderDto
     {
-        public int FeatureId { get; set; }
         public string Title1 { get; set; }
         public string Description1 { get; set; }
         public string Title2 { get; set; }

@@ -4,14 +4,14 @@ using RealTimeRestaurant.EntityLayer.Entities;
 
 namespace RealTimeRestaurant.Api.Mapping
 {
-    public class FeatureMapping : Profile
+    public class SliderMapping : Profile
     {
-        public FeatureMapping()
+        public SliderMapping()
         {
-            CreateMap<Feature, ResultFeatureDto>().ReverseMap();
-            CreateMap<Feature, CreateFeatureDto>().ReverseMap();
-            CreateMap<Feature, UpdateFeatureDto>().ReverseMap();
-            CreateMap<Feature, GetFeatureDto>().ReverseMap();
+            CreateMap<Slider, ResultSliderDto>().ReverseMap();
+            CreateMap<Slider, CreateSliderDto>().ReverseMap();
+            CreateMap<Slider, UpdateSliderDto>().ReverseMap();
+            CreateMap<Slider, GetSliderDto>().ReverseMap();
         }
     }
 }
