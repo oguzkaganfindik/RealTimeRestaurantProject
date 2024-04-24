@@ -35,10 +35,11 @@ namespace RealTimeRestaurant.Api.Controllers
                 Mail = createBookingDto.Mail,
                 Phone = createBookingDto.Phone,
                 Date = createBookingDto.Date,
-                PersonCount = createBookingDto.PersonCount
+                PersonCount = createBookingDto.PersonCount,
+                Description = createBookingDto.Description
             });
 
-            return Ok("Kategori Eklendi");
+            return Ok("Rezervasyon Yapıldı");
         }
 
         [HttpDelete("{id}")]
@@ -46,7 +47,7 @@ namespace RealTimeRestaurant.Api.Controllers
         {
             var value = _bookingService.TGetById(id);
             _bookingService.TDelete(value);
-            return Ok("Kategori Silindi");
+            return Ok("Rezervasyon Silindi");
         }
 
         [HttpGet("{id}")]
@@ -69,7 +70,22 @@ namespace RealTimeRestaurant.Api.Controllers
                 PersonCount = updateBookingDto.PersonCount
             });
 
-            return Ok("Kategori Güncellendi");
+            return Ok("Rezervasyon Güncellendi");
         }
+
+        [HttpGet("BookingStatusApproved/{id}")]
+        public IActionResult BookingStatusApproved(int id)
+        {
+            _bookingService.BookingStatusApproved(id);
+            return Ok("Rezervasyon Açıklaması Değiştirildi");
+        }
+
+        [HttpGet("BookingStatusCancelled/{id}")]
+        public IActionResult BookingStatusCancelled(int id)
+        {
+            _bookingService.BookingStatusCancelled(id);
+            return Ok("Rezervasyon Açıklaması Değiştirildi");
+        }
+
     }
 }

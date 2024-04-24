@@ -13,6 +13,16 @@ namespace RealTimeRestaurant.BusinessLayer.Concrete
             _bookingDal = bookingDal;
         }
 
+        public void BookingStatusApproved(int id)
+        {
+            _bookingDal.BookingStatusApproved(id);
+        }
+
+        public void BookingStatusCancelled(int id)
+        {
+            _bookingDal.BookingStatusCancelled(id);
+        }
+
         public void TAdd(Booking entity)
         {
             _bookingDal.Add(entity);
