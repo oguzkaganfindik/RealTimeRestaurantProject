@@ -1,7 +1,12 @@
+using RealTimeRestaurant.DataAccessLayer.Concrete;
+using RealTimeRestaurant.EntityLayer.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddDbContext<RealTimeRestaurantContext>();
+builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<RealTimeRestaurantContext>();
 builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
 
