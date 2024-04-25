@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using RealTimeRestaurant.DtoLayer.FeatureDto;
+using RealTimeRestaurant.DtoLayer.SliderDto;
 using RealTimeRestaurant.EntityLayer.Entities;
 
 namespace RealTimeRestaurant.Api.Mapping
 {
-    public class SliderMapping : Profile
+	public class SliderMapping : Profile
     {
         public SliderMapping()
         {

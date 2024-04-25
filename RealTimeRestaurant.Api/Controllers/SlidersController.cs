@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using RealTimeRestaurant.BusinessLayer.Abstract;
-using RealTimeRestaurant.DtoLayer.FeatureDto;
+using RealTimeRestaurant.DtoLayer.SliderDto;
 using RealTimeRestaurant.EntityLayer.Entities;
 
 namespace RealTimeRestaurant.Api.Controllers
@@ -38,7 +38,7 @@ namespace RealTimeRestaurant.Api.Controllers
                 Description3 = createSliderDto.Description3
             });
 
-            return Ok("Öne Çıkan Alan Bilgisi Eklendi");
+            return Ok("Slider Bilgisi Eklendi");
         }
 
         [HttpDelete("{id}")]
@@ -46,7 +46,7 @@ namespace RealTimeRestaurant.Api.Controllers
         {
             var value = _sliderService.TGetById(id);
             _sliderService.TDelete(value);
-            return Ok("Öne Çıkan Alan Bilgisi Silindi");
+            return Ok("Slider Bilgisi Silindi");
         }
 
         [HttpGet("{id}")]
@@ -70,7 +70,7 @@ namespace RealTimeRestaurant.Api.Controllers
                 Description3 = updateSliderDto.Description3
             });
 
-            return Ok("Öne Çıkan Alan Bilgisi Güncellendi");
+            return Ok("Slider Bilgisi Güncellendi");
         }
     }
 }
