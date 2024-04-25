@@ -1,6 +1,6 @@
 ﻿namespace RealTimeRestaurant.WebUI.Dtos.SliderDtos
 {
-    public class ResultSliderDto
+	public class ResultSliderDto
     {
         public int SliderId { get; set; }
         public string Title1 { get; set; }

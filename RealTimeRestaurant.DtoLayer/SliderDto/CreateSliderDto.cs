@@ -1,6 +1,6 @@
-﻿namespace RealTimeRestaurant.DtoLayer.FeatureDto
+﻿namespace RealTimeRestaurant.DtoLayer.SliderDto
 {
-    public class CreateSliderDto
+	public class CreateSliderDto
     {
         public string Title1 { get; set; }
         public string Description1 { get; set; }
