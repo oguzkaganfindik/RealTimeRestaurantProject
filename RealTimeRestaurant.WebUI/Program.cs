@@ -8,13 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
 
 // Add services to the container.
-
 builder.Services.AddDbContext<RealTimeRestaurantContext>();
-builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<RealTimeRestaurantContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<RealTimeRestaurantContext>();
 builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews(opt =>
 {
     opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));
+});
+
+builder.Services.ConfigureApplicationCookie(opts =>
+{
+    opts.LoginPath = "/Login/Index";
 });
 
 var app = builder.Build();
@@ -31,7 +35,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
