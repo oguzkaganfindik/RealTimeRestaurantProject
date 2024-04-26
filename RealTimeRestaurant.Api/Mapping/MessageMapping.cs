@@ -8,9 +8,9 @@ namespace RealTimeRestaurant.Api.Mapping
     {
         public MessageMapping()
         {
-            CreateMap<Slider, ResultMessageDto>().ReverseMap();
-            CreateMap<Slider, CreateMessageDto>().ReverseMap();
-            CreateMap<Slider, UpdateMessageDto>().ReverseMap();
+            CreateMap<Message, ResultMessageDto>().ReverseMap();
+            CreateMap<Message, CreateMessageDto>().ReverseMap();
+            CreateMap<Message, UpdateMessageDto>().ReverseMap();
         }
     }
 }
