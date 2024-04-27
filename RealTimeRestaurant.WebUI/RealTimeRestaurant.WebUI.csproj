@@ -25,4 +25,10 @@
     <ProjectReference Include="..\RealTimeRestaurant.DataAccessLayer\RealTimeRestaurant.DataAccessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="QRCoder">
+      <HintPath>..\..\..\..\Downloads\Downloads\QRCoder.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
