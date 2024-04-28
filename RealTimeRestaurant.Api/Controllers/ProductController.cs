@@ -138,5 +138,23 @@ namespace RealTimeRestaurant.Api.Controllers
 
             return Ok("Ürün Bilgisi Güncellendi");
         }
+
+        [HttpGet("ProductPriceBySteakBurger")]
+        public IActionResult ProductPriceBySteakBurger()
+        {
+            return Ok(_productService.TProductPriceBySteakBurger());
+        }
+
+        [HttpGet("TotalPriceByDrinkCategory")]
+        public IActionResult TotalPriceByDrinkCategory()
+        {
+            return Ok(_productService.TTotalPriceByDrinkCategory());
+        }
+
+        [HttpGet("TotalPriceBySaladCategory")]
+        public IActionResult TotalPriceBySaladCategory()
+        {
+            return Ok(_productService.TTotalPriceBySaladCategory());
+        }
     }
 }
